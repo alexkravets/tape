@@ -95,7 +95,8 @@ class TapeDiscoveryService
 
 
     def add_feed(feed_title, feed_url, orig_url, base_uri = nil)
-      url = feed_url.sub(/^feed:/, '').strip
+      title = feed_title.presence || 'Channel'
+      url   = feed_url.sub(/^feed:/, '').strip
 
       if base_uri
         url = URI.parse(base_uri).merge(feed_url).to_s
@@ -115,7 +116,7 @@ class TapeDiscoveryService
 
       if ! @feed_urls.include?(url)
         @feed_urls << url
-        @subscription.channels.new(title: feed_title, url: url)
+        @subscription.channels.new(title: title, url: url)
       end
     end
 
