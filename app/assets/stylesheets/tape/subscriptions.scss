@@ -1,0 +1,43 @@
+.subscriptions .input-channels {
+  .nested-form-new,
+  .nested-form-delete {
+    display : none;
+  }
+
+  ul {
+    margin-top : .45em;
+  }
+
+  ul li {
+    margin-top : .5em;
+    border     : none;
+  }
+
+  .input-switch {
+    padding : 0;
+
+    .label {
+      padding-right : 4em;
+      line-height   : 1.2;
+    }
+
+    .switch {
+      top : 1px;
+    }
+  }
+
+  & > .label {
+    display : none;
+  }
+}
+
+.tape-channel-title {
+  @include ellipsis;
+  font-size : .9em;
+  color     : $base-font-color;
+}
+
+.tape-channel-url {
+  @include position(relative, -4px null null null);
+  font-size : .8em;
+}

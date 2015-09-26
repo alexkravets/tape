@@ -1,0 +1,30 @@
+.tape-post-published-at:before {
+  @include position(relative);
+  content : ' • ';
+  bottom  : -1px;
+}
+
+.tape-post-title {
+  font-weight : $medium;
+  margin      : .3em 0 .5em;
+  color       : rgb(64,64,64);
+}
+
+.tape-post-meta {
+  font-size : .8em;
+  color     : lighten($base-font-color, 35%);
+}
+
+.tape-post-summary {
+  line-height : 1.3;
+  font-size   : .8em;
+  color       : lighten($base-font-color, 35%);
+}
+
+.tape-item {
+  @include user-select(none);
+  &:hover .tape-post-title {
+    color : $positive-color;
+  }
+  padding : 1.5em 1em;
+}

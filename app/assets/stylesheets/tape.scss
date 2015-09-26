@@ -1,0 +1,73 @@
+@import "tape/posts";
+@import "tape/subscriptions";
+
+.list.tape {
+  width : inherit;
+
+  .header .title {
+    display : none;
+  }
+}
+
+.list.tape .item.is-folder {
+  display : none;
+}
+
+.tape-header-subscriptions {
+  @include position(absolute, null 0 null null);
+  @include icon-reorder($positive-color);
+  @include ellipsis;
+}
+
+.tape-header-subscriptions + .search {
+  right : 2.5em;
+}
+
+.list-search .tape-header-subscriptions + .search {
+  right : 0;
+}
+
+.tape-refresh-posts {
+  @include position(absolute, null null null 2.5em);
+}
+
+.tape-header-next {
+  @include position(absolute, 0 1em null null);
+  font-weight : $medium;
+}
+
+/* Tablet ------------------------------------------------------------------ */
+@media #{$tablet} {
+  .tape-refresh-posts {
+    left : 1em;
+  }
+}
+
+/* Desktop ----------------------------------------------------------------- */
+@media #{$desktop} {
+  .tape-item {
+    margin    : -1px auto 0;
+    max-width : 640px;
+  }
+
+  .tape-item:after {
+    right : 1em;
+  }
+
+  .tape .view.subscriptions,
+  .tape .list.subscriptions {
+    border-left : 1px solid $border-color;
+    width       : 25em;
+    right       : 0;
+    left        : initial;
+  }
+
+  .tape .list.subscriptions .back {
+    width : auto;
+    left  : 1em;
+
+    &:before {
+      display : none;
+    }
+  }
+}
