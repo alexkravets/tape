@@ -9,10 +9,12 @@ Add to ```Gemfile```:
 
     gem 'tape', github: 'alexkravets/tape'
 
-Add admin assets controller to ```routes.rb```:
+Add tape resource controllers to ```routes.rb```:
 
 ```ruby
-resources :assets, controller: 'assets'
+# rss
+resources :tape_subscriptions, controller: 'tape_subscriptions'
+resources :tape_posts,         controller: 'tape_posts'
 ```
 
 Add to ```admin.scss``` and ```admin.coffee```:
@@ -28,7 +30,7 @@ Add to ```admin.scss``` and ```admin.coffee```:
 Add to ```admin.coffee``` character configuration object:
 
 ```coffee
-tape: new Tape('Feed', '/admin')
+tape: new Tape('Tape', '/admin')
 ```
 
 
