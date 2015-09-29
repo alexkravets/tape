@@ -29,11 +29,15 @@ class @TapePostsItem extends Item
 
 
   _render_summary: (summary) ->
-    if ! @$summary
-      @$summary =$ "<div class='tape-post-summary'>"
-      @$el.append(@$summary)
+    if summary == ''
+      @$summary?.remove()
 
-    @$summary.html(summary)
+    else
+      if ! @$summary
+        @$summary =$ "<div class='tape-post-summary'>"
+        @$el.append(@$summary)
+
+      @$summary.html(summary)
 
 
   # PUBLIC ================================================

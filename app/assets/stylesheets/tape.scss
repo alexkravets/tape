@@ -45,29 +45,45 @@
 
 /* Desktop ----------------------------------------------------------------- */
 @media #{$desktop} {
-  .tape-item {
-    margin    : -1px auto 0;
-    max-width : 640px;
-  }
-
-  .tape-item:after {
-    right : 1em;
+  .list.tape {
+    right : 22em;
   }
 
   .tape .view.subscriptions,
   .tape .list.subscriptions {
-    border-left : 1px solid $border-color;
-    width       : 25em;
-    right       : 0;
-    left        : initial;
+    width : 22em;
+    right : 0;
+    left  : initial;
+  }
+
+  .tape-item {
+    margin    : -1px auto 0;
+    max-width : 580px;
+    padding   : 2em 1em;
+
+    &:after {
+      right : 1em;
+    }
+  }
+
+  .is-folder + .tape-item {
+    padding-top : 1em;
+  }
+
+  .tape-header-subscriptions {
+    display : none;
   }
 
   .tape .list.subscriptions .back {
-    width : auto;
-    left  : 1em;
+    display : none;
+  }
 
-    &:before {
-      display : none;
-    }
+  .tape-header-subscriptions + .search {
+    right : 0;
+  }
+
+  .tape-refresh-posts {
+    right : 2.5em;
+    left  : initial;
   }
 }

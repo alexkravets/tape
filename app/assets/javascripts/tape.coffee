@@ -10,6 +10,10 @@ class @Tape
       onListInit: (list) ->
         new PostsHeader(list)
 
+      onModuleInit: (module) ->
+        if module.chr.isDesktop()
+          module.chr.$mainMenu.find('.menu-tape').attr 'href', '#/tape/subscriptions'
+
       arrayStore: new RailsArrayStore({
         resource:    'tape_post'
         path:        "#{ apiPath }/tape_posts"
