@@ -32,8 +32,9 @@ class @Tape
           })
 
           formSchema:
-            website_url: { type: 'string', placeholder: 'Website url', label: 'Website', required: true }
-            title:       { type: 'string', placeholder: 'Subscription title', required: true }
+            website_icon_url: { type: 'hidden' }
+            website_url:      { type: 'string', placeholder: 'Website url', label: 'Website', required: true }
+            title:            { type: 'string', placeholder: 'Subscription title', required: true }
             channels:
               type: 'documents'
               formSchema:

@@ -1,13 +1,12 @@
-.tape-post-published-at:before {
+.tape-post {
   @include position(relative);
-  content : ' • ';
-  bottom  : -1px;
-}
+  @include user-select(none);
 
-.tape-post-title {
-  font-weight : $medium;
-  margin-top  : .3em;
-  color       : rgb(64,64,64);
+  padding : 1.5em 1em;
+
+  &:hover .tape-post-title {
+    color : $positive-color;
+  }
 }
 
 .tape-post-meta {
@@ -15,17 +14,26 @@
   color     : lighten($base-font-color, 35%);
 }
 
-.tape-post-summary {
-  line-height : 1.3;
-  margin-top  : .5em;
-  font-size   : .8em;
-  color       : lighten($base-font-color, 35%);
+.tape-post-title {
+  font-weight : $medium;
+  margin-top  : .25em;
+  color       : rgb(64,64,64);
 }
 
-.tape-item {
-  @include user-select(none);
-  &:hover .tape-post-title {
-    color : $positive-color;
-  }
-  padding : 1.5em 1em;
+.tape-post-summary {
+  line-height  : 1.3;
+  margin-top   : .75em;
+  font-size    : .8em;
+  color        : lighten($base-font-color, 35%);
+}
+
+.tape-post-subscription-icon {
+  @include position(absolute, 2.75em null null -2.75em);
+  width   : 2.5em;
+}
+
+.tape-post-published-at:before {
+  @include position(relative);
+  content : ' • ';
+  bottom  : -1px;
 }

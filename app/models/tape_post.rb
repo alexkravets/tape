@@ -10,8 +10,10 @@ class TapePost
   field :title
   field :url
   field :summary
+  field :image_url
   field :published_at, type: DateTime
   field :subscription_title
+  field :subscription_icon_url
   field :channel_title
   field :channel_url
 
@@ -51,6 +53,16 @@ class TapePost
     else
       published_at.strftime("%d %b %Y at %H:%M")
 
+    end
+  end
+
+
+  def _list_item_thumbnail
+    if ! image_url.empty?
+      width   = 480
+      height  = 260
+      quality = 70
+      return "http://www.you-tracker.com/API/ImageResizer?ytw=#{ width }&yth=#{ height }&ytaspect=true&ytquality=#{ quality }&ytimageurl=#{ image_url }"
     end
   end
 

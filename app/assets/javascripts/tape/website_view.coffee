@@ -25,9 +25,10 @@ class @WebsiteView
 
 
   _link_inputs: ->
-    @$websiteUrlInput = @view.form.inputs.website_url
-    @$titleInput      = @view.form.inputs.title
-    @$channelsInput   = @view.form.inputs.channels
+    @$websiteIconUrlInput = @view.form.inputs.website_icon_url
+    @$websiteUrlInput     = @view.form.inputs.website_url
+    @$titleInput          = @view.form.inputs.title
+    @$channelsInput       = @view.form.inputs.channels
 
 
   _add_next: ->
@@ -78,6 +79,7 @@ class @WebsiteView
 
 
   _update_optional_inputs: (subscription) ->
+    @$websiteIconUrlInput.updateValue(subscription.website_icon_url)
     @$websiteUrlInput.updateValue(subscription.website_url)
     @$titleInput.updateValue(subscription.title)
     @$channelsInput.updateValue(subscription.channels)

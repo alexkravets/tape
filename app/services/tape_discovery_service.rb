@@ -22,6 +22,7 @@ class TapeDiscoveryService
         url.gsub!('http://', 'https://')
         html = Nokogiri::HTML(open(url))
 
+      # TODO: add anther option for https://www for naked subdomain
       else
         url  = ''
         html = ''
@@ -50,14 +51,34 @@ class TapeDiscoveryService
       return nil
     end
 
+    icon_url = fetch_icon()
+
+    ap icon_url
+
     @subscription = TapeSubscription.new({
-      title:       title,
-      website_url: @url
+      title:            title,
+      website_url:      @url,
+      website_icon_url: icon_url
     })
 
     add_feeds()
 
     return @subscription
+  end
+
+
+  def fetch_icon
+    icon_url = ''
+
+    json = Net::HTTP.get(URI("http://icons.better-idea.org/api/icons?url=#{ @url }"))
+    data = JSON.parse(json)
+    icon = data['icons'].first
+
+    if icon
+      icon_url = icon.fetch('url', '')
+    end
+
+    return icon_url
   end
 
 

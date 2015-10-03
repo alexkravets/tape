@@ -41,12 +41,22 @@
   .tape-refresh-posts {
     left : 1em;
   }
+
+  .subscriptions .header .title {
+    line-height : 2.95;
+    font-size   : .9em;
+  }
 }
 
 /* Desktop ----------------------------------------------------------------- */
 @media #{$desktop} {
   .list.tape {
-    right : 22em;
+    background-color : white;
+    right            : 22em;
+
+    .header {
+      background-color : white;
+    }
   }
 
   .tape .view.subscriptions,
@@ -56,18 +66,14 @@
     left  : initial;
   }
 
-  .tape-item {
-    margin    : -1px auto 0;
+  .tape-post {
     max-width : 580px;
     padding   : 2em 1em;
+    margin    : -1px auto 0;
 
     &:after {
       right : 1em;
     }
-  }
-
-  .is-folder + .tape-item {
-    padding-top : 1em;
   }
 
   .tape-header-subscriptions {

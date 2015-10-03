@@ -8,6 +8,7 @@ class TapeSubscription
   ## Attributes
   field :title
   field :website_url
+  field :website_icon_url, default: ''
 
 
   ## Validators
@@ -33,6 +34,11 @@ class TapeSubscription
 
   def _list_item_subtitle
     website_url
+  end
+
+
+  def _list_item_thumbnail
+    website_icon_url
   end
 
 
