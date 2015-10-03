@@ -22,6 +22,11 @@ class @TapePostsItem extends Item
     @$meta_subscription_title.html(subscription_title)
     @$meta_published_at.html(published_at)
 
+    if subscription_icon_url == ''
+      @$meta_subscription_icon.hide()
+    else
+      @$meta_subscription_icon.show()
+
 
   _render_image: (image_url) ->
     if ! @$image
