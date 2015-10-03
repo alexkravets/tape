@@ -32,7 +32,7 @@ class TapeSubscriptionsService
                                     title:                 title,
                                     url:                   e.url,
                                     summary:               summary,
-                                    image_url:             post_image_url(e.url),
+                                    image_url:             '', #post_image_url(e.url),
                                     published_at:          e.published,
                                     subscription_title:    subscription.title,
                                     subscription_icon_url: subscription.website_icon_url,
