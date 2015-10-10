@@ -1,6 +1,6 @@
 # Tape
 
-*RSS reader for [Character CMS](https://github.com/slate-studio/chr).*
+*RSS reader for [Character](https://github.com/slate-studio/chr) project.*
 
 
 ### Installation
@@ -30,7 +30,7 @@ Add to ```admin.scss``` and ```admin.coffee```:
 Add to ```admin.coffee``` character configuration object:
 
 ```coffee
-tape: new Tape('Tape', '/admin')
+tape: new Tape()
 ```
 
 

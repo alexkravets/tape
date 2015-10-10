@@ -1,7 +1,7 @@
 #= require_tree ./tape
 
 class @Tape
-  constructor: (title, apiPath) ->
+  constructor: (title='RSS', apiPath='/admin') ->
     config =
       title: title
 
