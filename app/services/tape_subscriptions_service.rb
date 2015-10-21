@@ -13,10 +13,13 @@ class TapeSubscriptionsService
 
       subscription.active_channels.each do |channel|
         ap channel.url
-
-        feedjira_feed = Feedjira::Feed.fetch_and_parse channel.url
-
-        create_new_posts(subscription, channel, feedjira_feed)
+        begin
+          feedjira_feed = Feedjira::Feed.fetch_and_parse channel.url
+        rescue # Feedjira::NoParserAvailable
+          ap "Bad feed URL: #{ channel.url } — #{ channel.title }"
+        else
+          create_new_posts(subscription, channel, feedjira_feed)
+        end
       end
     end
 
