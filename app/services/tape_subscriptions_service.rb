@@ -52,10 +52,10 @@ class TapeSubscriptionsService
 
 
     def textify(string)
-      if string
-        ActionController::Base.helpers.strip_tags(string.presence.sanitize).gsub("\n", ' ').strip
-      else
+      if string.nil?
         ''
+      else
+        ActionController::Base.helpers.strip_tags(string.sanitize).gsub("\n", ' ').strip
       end
     end
 

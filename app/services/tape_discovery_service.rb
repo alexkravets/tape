@@ -85,13 +85,13 @@ class TapeDiscoveryService
   private
 
     def title
-      @html.css('title').text.sanitize!
+      (@html.css('title').text.presence || 'No Title') .sanitize
     end
 
 
     def add_feeds
       @feed_urls = []
-      doc    = @html
+      doc = @html
 
       if doc.at('base') and doc.at('base')['href']
         @base_uri = doc.at('base')['href']
