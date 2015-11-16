@@ -4,6 +4,7 @@ class @Tape
   constructor: (title='RSS', apiPath='/admin') ->
     config =
       title: title
+      menuIcon: 'feed'
 
       itemClass: TapePostsItem
 
