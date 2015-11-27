@@ -14,9 +14,8 @@
 }
 
 .tape-header-subscriptions {
+  @include header-icon-base;
   @include position(absolute, null 0 null null);
-  @include icon-reorder($positive-color);
-  @include ellipsis;
 }
 
 .tape-header-subscriptions + .search {
@@ -28,7 +27,12 @@
 }
 
 .tape-refresh-posts {
+  @include header-icon-base;
   @include position(absolute, null null null 2.5em);
+}
+
+.show-spinner .tape-refresh-posts {
+  visibility: hidden;
 }
 
 .tape-header-next {
@@ -39,7 +43,7 @@
 /* Tablet ------------------------------------------------------------------ */
 @media #{$tablet} {
   .tape-refresh-posts {
-    left : 1em;
+    left : 0;
   }
 
   .subscriptions .header .title {
