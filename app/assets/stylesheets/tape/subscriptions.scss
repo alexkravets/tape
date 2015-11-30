@@ -1,4 +1,10 @@
+.list.subscriptions .header {
+  background-color: $bg-color;
+}
+
 .subscriptions {
+  background-color: $bg-color;
+
   .item-title {
     font-size : .9em;
   }
@@ -62,4 +68,9 @@
   @include position(relative, -4px null null null);
   @include ellipsis;
   font-size : .8em;
+}
+
+/* Tablet ------------------------------------------------------------------ */
+@media #{$desktop} {
+  .subscriptions .header .close { @include header-back-icon; }
 }

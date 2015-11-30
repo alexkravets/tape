@@ -68,9 +68,10 @@ class TapeDiscoveryService
 
 
   def fetch_icon
+    api_url = "http://icons.better-idea.org/allicons.json?pretty=true&url="
     icon_url = ''
 
-    json = Net::HTTP.get(URI("http://icons.better-idea.org/api/icons?url=#{ @url }"))
+    json = Net::HTTP.get(URI(api_url + @url))
     data = JSON.parse(json)
     icon = data['icons'].first
 
