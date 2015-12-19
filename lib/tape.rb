@@ -8,5 +8,6 @@ require 'feedjira'
 module Tape
   class Engine < ::Rails::Engine
     require 'tape/engine'
+    require 'tape/routing'
   end
 end
