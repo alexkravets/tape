@@ -1,20 +1,19 @@
 # Tape
 
-*RSS reader for [Character](https://github.com/slate-studio/chr) project.*
+*RSS reader for [Character](https://github.com/slate-studio/chr) based website.*
 
 
 ### Installation
 
 Add to ```Gemfile```:
 
-    gem 'tape', github: 'alexkravets/tape'
+    gem 'tape-chr'
 
 Add tape resource controllers to ```routes.rb```:
 
 ```ruby
-# rss
-resources :tape_subscriptions, controller: 'tape_subscriptions'
-resources :tape_posts,         controller: 'tape_posts'
+  mount_tape_subscriptions_crud
+  mount_tape_posts_crud
 ```
 
 Add to ```admin.scss``` and ```admin.coffee```:
